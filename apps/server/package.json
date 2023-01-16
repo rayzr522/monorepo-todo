@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx .",
+    "dev": "tsx watch ."
+  },
+  "dependencies": {
+    "@trpc/server": "^10.9.0",
+    "todo-api": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^3.12.2"
+  }
+}
