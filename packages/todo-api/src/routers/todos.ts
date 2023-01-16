@@ -1,5 +1,5 @@
 import { TRPCError } from "@trpc/server";
-import crypto from "crypto";
+import { randomUUID } from "crypto";
 import { z } from "zod";
 import { Todo } from "../data/todos";
 import { t } from "../trpc";
@@ -10,7 +10,7 @@ export const todosRouter = t.router({
   list: t.procedure.query(() => todos),
   add: t.procedure.input(z.string().min(1)).mutation(({ input }) => {
     const todo = {
-      id: crypto.randomUUID() as string,
+      id: randomUUID(),
       name: input,
       complete: false,
     };

@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "@trpc/server": "^10.9.0",
-    "todo-api": "workspace:*"
+    "todo-api": "workspace:*",
+    "tsconfig": "workspace:*"
   },
   "devDependencies": {
     "tsx": "^3.12.2"

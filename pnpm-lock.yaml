@@ -21,6 +21,7 @@ importers:
       react-hook-form: ^7.42.1
       react-router-dom: ^6.6.2
       todo-api: workspace:*
+      tsconfig: workspace:*
       typescript: ^4.9.3
       unplugin-auto-import: ^0.12.1
       vite: ^4.0.0
@@ -36,6 +37,7 @@ importers:
       react-hook-form: 7.42.1_react@18.2.0
       react-router-dom: 6.6.2_biqbaboplfbrettd7655fr4n2y
       todo-api: link:../../packages/todo-api
+      tsconfig: link:../../packages/tsconfig
       unplugin-auto-import: 0.12.1
     devDependencies:
       '@types/react': 18.0.26
@@ -48,10 +50,12 @@ importers:
     specifiers:
       '@trpc/server': ^10.9.0
       todo-api: workspace:*
+      tsconfig: workspace:*
       tsx: ^3.12.2
     dependencies:
       '@trpc/server': 10.9.0
       todo-api: link:../../packages/todo-api
+      tsconfig: link:../../packages/tsconfig
     devDependencies:
       tsx: 3.12.2
 
@@ -59,12 +63,17 @@ importers:
     specifiers:
       '@trpc/server': ^10.9.0
       '@types/node': ^18.11.18
+      tsconfig: workspace:*
       zod: ^3.20.2
     dependencies:
       '@trpc/server': 10.9.0
       zod: 3.20.2
     devDependencies:
       '@types/node': 18.11.18
+      tsconfig: link:../tsconfig
+
+  packages/tsconfig:
+    specifiers: {}
 
 packages:
 
