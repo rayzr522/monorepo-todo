@@ -9,7 +9,11 @@ const todos: Todo[] = [];
 export const todosRouter = t.router({
   list: t.procedure.query(() => todos),
   add: t.procedure.input(z.string().min(1)).mutation(({ input }) => {
-    const todo = { id: crypto.randomUUID(), name: input, complete: false };
+    const todo = {
+      id: crypto.randomUUID() as string,
+      name: input,
+      complete: false,
+    };
     todos.push(todo);
     return todo;
   }),

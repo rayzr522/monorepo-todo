@@ -4,7 +4,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "tsx .",
-    "dev": "tsx watch ."
+    "dev": "tsx watch --clear-screen=false ."
   },
   "dependencies": {
     "@trpc/server": "^10.9.0",
