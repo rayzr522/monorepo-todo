@@ -1,0 +1,17 @@
+{
+  "name": "blog-server",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx .",
+    "dev": "tsx watch --clear-screen=false ."
+  },
+  "dependencies": {
+    "@trpc/server": "^10.9.0",
+    "blog-api": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^3.12.2"
+  }
+}

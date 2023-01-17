@@ -10,7 +10,8 @@ export const todosRouter = t.router({
   list: t.procedure.query(() => todos),
   add: t.procedure.input(z.string().min(1)).mutation(({ input }) => {
     const todo = {
-      id: randomUUID(),
+      // TODO: this is because the typings are from @types/node which isn't necessarily a dep for consumers. how do we fix that?
+      id: randomUUID() as string,
       name: input,
       complete: false,
     };

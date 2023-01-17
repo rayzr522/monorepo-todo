@@ -1,25 +1,25 @@
 import { useForm } from "react-hook-form";
-import { todoApi } from "../trpc";
+import { api } from "../trpc";
 
 export default function HomePage() {
-  const ctx = todoApi.useContext();
-  const { data: todos } = todoApi.todos.list.useQuery();
-  const addTodo = todoApi.todos.add.useMutation({
+  const ctx = api.useContext();
+  const { data: todos } = api.todo.todos.list.useQuery();
+  const addTodo = api.todo.todos.add.useMutation({
     onSuccess: (newTodo) => {
-      ctx.todos.list.setData(undefined, (todos) =>
+      ctx.todo.todos.list.setData(undefined, (todos) =>
         todos ? [...todos, newTodo] : [newTodo]
       );
-      return ctx.todos.list.invalidate();
+      return ctx.todo.todos.list.invalidate();
     },
   });
-  const toggleTodo = todoApi.todos.toggle.useMutation({
+  const toggleTodo = api.todo.todos.toggle.useMutation({
     onSuccess: (newTodo) => {
-      ctx.todos.list.setData(undefined, (todos) =>
+      ctx.todo.todos.list.setData(undefined, (todos) =>
         todos
           ? todos.map((todo) => (todo.id === newTodo.id ? newTodo : todo))
           : [newTodo]
       );
-      return ctx.todos.list.invalidate();
+      return ctx.todo.todos.list.invalidate();
     },
   });
 
@@ -37,7 +37,7 @@ export default function HomePage() {
   );
 
   return (
-    <RootLayout>
+    <>
       <h1>Home</h1>
       <p>Welcome to the home page.</p>
       <form onSubmit={onSubmit}>
@@ -81,6 +81,6 @@ export default function HomePage() {
           </li>
         ))}
       </ul>
-    </RootLayout>
+    </>
   );
 }
